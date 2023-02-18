@@ -14,6 +14,7 @@ let submitForm = event => {
     });
     clearInputs();
     addToTable(salaries);
+    total(salaries);
 }
 
 let clearInputs = () => {
@@ -35,6 +36,29 @@ let addToTable = array => {
             <td>${newEmployee.idNumber}</td>
             <td>${newEmployee.job}</td>
             <td>${newEmployee.annualSalary}</td>
+            <td><button onclick="remove(event)">Delete</button></td>
         </tr>
     `
+}
+
+let remove = event => {
+    event.target.parentElement.parentElement.remove();
+}
+
+let total = array => {
+    let total = 0;
+    for (object of array) {
+        total += object.annualSalary;
+    };
+    let monthly = Math.round(total / 12);
+    let totalDiv = document.getElementById('total');
+    if (monthly > 20000) {
+        totalDiv.innerHTML = `
+            <h3 id="totalCost" style="background-color: red;">
+            Total Monthly Cost: $${monthly}
+            </h3>
+        `
+    } else {
+        totalDiv.innerHTML = `<h3 id="totalCost">Total Monthly Cost: $${monthly}</h3>`;
+    }
 }
