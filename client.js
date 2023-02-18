@@ -13,6 +13,15 @@ let submitForm = event => {
         job: event.target[3].value,
         annualSalary: event.target[4].valueAsNumber
     })
+
+    clearInputs();
     console.log(salaries)
 }
 
+let clearInputs = () => {
+    let inputDiv = document.getElementById('new-employee');
+    let children = inputDiv.children;
+    for (let i = 0; i < children.length - 1; i++) {
+        children[i].value = '';
+    }
+}
