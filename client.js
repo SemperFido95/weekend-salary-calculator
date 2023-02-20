@@ -52,7 +52,7 @@ let addToTable = array => {
 let remove = event => {
     //getting the last name, which is the innerHTML of the second td element in the row
     let removeName = event.target.parentElement.parentElement.children[2].innerHTML;
-    //looping over salaries array to find the object with the matching last name, then removing from array
+    //looping over salaries array to find the object with the matching id, then removing from array
     for (employee in salaries) {
         if (removeName === salaries[employee].idNumber) {
             salaries.splice(employee, 1)
