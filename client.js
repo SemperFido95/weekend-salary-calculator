@@ -27,7 +27,7 @@ let clearInputs = () => {
     let inputDiv = document.getElementById('input-buttons');
     let children = inputDiv.children;
     //loops over each input field and clears their values
-    for (let i = 0; i < children.length - 1; i++) {
+    for (let i = 0; i < children.length; i++) {
         children[i].value = '';
     }
 }
