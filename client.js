@@ -40,6 +40,14 @@ let addToTable = array => {
 }
 
 let remove = event => {
+    console.log(event);
+    let removeName = event.target.parentElement.parentElement.children[1].innerHTML;
+    for (employee in salaries) {
+        if (removeName === salaries[employee].lastName) {
+            salaries.splice(employee, 1)
+        }
+    }
+    total(salaries);
     event.target.parentElement.parentElement.remove();
 }
 
@@ -52,11 +60,11 @@ let total = array => {
     let totalDiv = document.getElementById('total');
     if (monthly > 20000) {
         totalDiv.innerHTML = `
-            <h3 id="totalCost" style="background-color: red;">
-            Total Monthly Cost: $${monthly}
+            <h3>Total Monthly Cost: $
+            <span id="totalCost" style="background-color: red;">${monthly}</span>
             </h3>
         `
     } else {
-        totalDiv.innerHTML = `<h3 id="totalCost">Total Monthly Cost: $${monthly}</h3>`;
+        totalDiv.innerHTML = `<h3>Total Monthly Cost: <span id="totalCost">$${monthly}</span></h3>`;
     }
 }
