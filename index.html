@@ -7,23 +7,28 @@
         <title>Salary Calculator</title>
     </head>
     <body>
+        <header>
+            <h1>Employee Salary Calculator</h1>
+        </header>
         <div id="content">
-            <header>
-                <h1>Employee Salary Calculator</h1>
-            </header>
             <div id="employee-input">
                 <form id="new-employee" onsubmit="submitForm(event)">
-                    <input class="input" id="firstName" type="text" required placeholder="First Name">
-                    <input class="input" id="lastName" type="text" required placeholder="Last Name">
-                    <input class="input" id="ID" type="number" required placeholder="ID Number">
-                    <input class="input" id="job" type="text" required placeholder="Job Title">
-                    <input class="input" id="salary" type="number" required placeholder="Annual Salary">
-                    <input class="input" type="submit">
+                    <div id="input-buttons">
+                        <input class="input" id="firstName" type="text" required placeholder="First Name">
+                        <input class="input" id="lastName" type="text" required placeholder="Last Name">
+                        <input class="input" id="ID" type="number" required placeholder="ID Number">
+                        <input class="input" id="job" type="text" required placeholder="Job Title">
+                        <input class="input" id="salary" type="number" required placeholder="Annual Salary">
+                    </div>
+                    <div id="submit-button">
+                        <input id="button" type="submit">
+                    </div>
+                        
                 </form>
             </div>
             <table id="calcTable">
                 <thead>
-                    <tr>
+                    <tr id="header-row">
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>ID</th>
